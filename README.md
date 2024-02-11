@@ -3,9 +3,9 @@ The XSS-Finder,  I created for my bug bounty hunting process. It helps me quickl
 
 ## Usage
 1. Clone the repository:
-     ```git clone https://github.com/your-username/flash-mode-spray.git```
+     ```git clone https://github.com/Shehzadcyber/XSS-Finder.git```
 2. Navigate to the project directory:
-    ```cd flash-mode-spray```
+    ```cd XSS-Finder```
 
 3. Run the following command
     ``` python xss-spray.py -u http://target.com/page.php -p param1 param2 -pl params.txt --payloads xss-payloads.txt ```
