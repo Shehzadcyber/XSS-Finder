@@ -10,10 +10,10 @@ The XSS-Finder,  I created for my bug bounty hunting process. It helps me quickl
 3. Run the following command
     ``` python xss-spray.py -u http://target.com/page.php -p param1 param2 -pl params.txt --payloads xss-payloads.txt ```
 
-# -u or --url: Specify the target URL.
-# -p or --parameters: Specify the parameters to be tested (separated by spaces).
-# -pl or --parameter-list: Specify a file with a list of parameters (one per line).
-# --payloads: Specify the file with XSS attack codes.
+- -u or --url: Specify the target URL.
+- -p or --parameters: Specify the parameters to be tested (separated by spaces).
+- -pl or --parameter-list: Specify a file with a list of parameters (one per line).
+- --payloads: Specify the file with XSS attack codes.
 
 
 ## Disclaimer
