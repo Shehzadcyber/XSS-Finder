@@ -8,7 +8,7 @@ The XSS-Finder,  I created for my bug bounty hunting process. It helps me quickl
     ```cd XSS-Finder```
 
 3. Run the following command
-    ``` python xss-spray.py -u http://target.com/page.php -p param1 param2 -pl params.txt --payloads xss-payloads.txt ```
+    ``` python3 XSS-Finder.py -u http://target.com/page.php -p param1 param2 -pl params.txt --payloads xss-payloads.txt ```
 
     - -u or --url: Specify the target URL.
     - -p or --parameters: Specify the parameters to be tested (separated by spaces).
