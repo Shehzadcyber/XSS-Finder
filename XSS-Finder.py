@@ -1,6 +1,7 @@
 import argparse
 import requests
 from urllib.parse import quote
+from termcolor import colored
 
 def check_xss_vulnerability(url, parameters, payloads):
     for payload in payloads:
@@ -9,12 +10,22 @@ def check_xss_vulnerability(url, parameters, payloads):
             target_url = f"{url}?{parameter}={encoded_payload}"
             response = requests.get(target_url)
             if payload in response.text:
-                print(f"Vulnerable XSS URL: {target_url}")
-                break
+                print(colored(f"Vulnerable XSS URL: {target_url}", 'red'))
+                break  # Move to the next payload if vulnerability is found
         else:
             print(f"Not Vulnerable to XSS for payload: {payload}")
 
 def main():
+    banner = '''
+    ╔══════════════════════════════════════════════════════════╗
+    ║                   XSS Finder TOOL                        ║
+    ║                    by Shehzad Roy                        ║
+    ║                Twitter: @theroyhunter313                 ║
+    ╚══════════════════════════════════════════════════════════╝
+    '''
+
+    print(banner)
+
     parser = argparse.ArgumentParser(description='XSS Spray')
     parser.add_argument('-u', '--url', help='Target URL')
     parser.add_argument('-p', '--parameters', nargs='+', help='Parameters')
@@ -29,8 +40,12 @@ def main():
     if args.parameters:
         parameters = args.parameters
     elif args.parameter_list:
-        with open(args.parameter_list, 'r') as file:
-            parameters = file.read().splitlines()
+        try:
+            with open(args.parameter_list, 'r') as file:
+                parameters = file.read().splitlines()
+        except FileNotFoundError:
+            print(f"Parameter file '{args.parameter_list}' not found.")
+            return
     else:
         print("Please provide either -p/--parameters or -pl/--parameter-list argument.")
         return
