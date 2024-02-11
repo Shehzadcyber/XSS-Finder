@@ -19,5 +19,5 @@ The XSS-Finder,  I created for my bug bounty hunting process. It helps me quickl
 ## Disclaimer
 Flash Mode SPRAY is intended for legal and authorized security testing purposes only. I am not responsible for any unauthorized use or consequences resulting from the use of this tool.
 
-=============================================================================================================================================================================================
+================================================================================================
 Feel free to customize this description further if needed. Happy bug bounty hunting!
